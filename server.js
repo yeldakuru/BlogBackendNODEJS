@@ -7,7 +7,17 @@ app.set('view engine','ejs')
 app.use('/articles',articleRouter)
 
 app.get('/',(req,res)=>{
-  res.render('index',{text: 'hello'})
+    const articles=[{
+        title: 'test article',
+        createdAt:new Date(),
+        description:'test description'
+    },
+    {
+        title: 'test article 2',
+        createdAt:new Date(),
+        description:'test description 2'
+    }]
+  res.render('articles/index',{articles: articles})
 })
 
 app.listen(5000)

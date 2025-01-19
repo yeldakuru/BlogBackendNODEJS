@@ -2,8 +2,11 @@ const express= require('express')
 const { model } = require('mongoose')
 const router =express.Router()
 
-router.get('/test',(rep,res)=>{
- res.send('In articles')
-
+router.get('/new',(rep,res)=>{
+ res.send('articles/new')
 })
-module.exports=router
+
+router.post('/',(rep,res)=>{
+    
+})
+module.exports = router
