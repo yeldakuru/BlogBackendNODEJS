@@ -1,11 +1,11 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const articleRouter = require('./routes/articles');
+const express = require('express')
+const mongoose = require('mongoose')
+const articleRouter = require('./routes/articles')
 const app = express();
 
-mongoose.connect('mongodb://localhost/blog');
+mongoose.connect('mongodb://localhost/blog')
 
-app.set('view engine','ejs');
+app.set('view engine','ejs')
 app.use(express.urlencoded({ extended: false }))
 
 
@@ -25,9 +25,9 @@ app.get("/",(req,res)=>{
         createdAt : new Date(),
         description : "Test Description333"
     }]
-    res.render('articles/index',{articles : articles});
+    res.render('articles/index',{articles : articles})
 });
 
 app.use('/articles',articleRouter)
 
-app.listen(5000);
+app.listen(5000)
